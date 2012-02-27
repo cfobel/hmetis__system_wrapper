@@ -1,0 +1,3 @@
+[submodule "hmetis__parser"]
+	path = hmetis__parser
+	url = https://github.com/cfobel/hmetis__parser.git
