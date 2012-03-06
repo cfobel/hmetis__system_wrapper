@@ -8,6 +8,7 @@
 #include <boost/array.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
+#include "hmetis__parser/PartitionReader.hpp"
 #include "hmetis__parser/HMetisResultParser.hpp"
 
 namespace hmetis {
