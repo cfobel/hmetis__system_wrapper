@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <stdexcept>
 #include <boost/format.hpp>
 #include <boost/array.hpp>
 #include <boost/filesystem.hpp>
@@ -120,6 +121,10 @@ public:
         output << graph.size() << " " << vertex_count << endl;
         for(int edge_id = 0; edge_id < graph.size(); edge_id++) {
             vector<int> const &vertices = graph[edge_id];
+            if(vertices.size() <= 0) {
+                throw std::runtime_error((_("Empty edge: %d")
+                        % edge_id).str());
+            }
             output << vertices[0];
             for(int vertex_id = 1; vertex_id < vertices.size(); vertex_id++) {
                 output << " " << vertices[vertex_id];
